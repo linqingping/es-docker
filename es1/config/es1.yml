@@ -1,0 +1,18 @@
+#集群名称 所有节点要保持一致
+cluster.name: "wxqb_es"
+#本节点名称
+node.name: node-1
+#手动指定可以成为 mater 的所有节点的 name 或者 ip，这些配置将会在第一次选举中进行计算
+#cluster.initial_master_nodes: ["node-1"]
+#discovery.seed_hosts: ["127.0.0.1:9300","127.0.0.1:9301"]
+discovery.seed_hosts: ["192.168.70.58:9300","192.168.70.58:9301"]
+node.master: true
+#是否存储数据
+node.data: true
+http.port: 9201
+transport.tcp.port: 9301
+#设置本机通信地址,用于其它节点和该节点交互的ip地址
+network.host: 0.0.0.0
+network.tcp.no_delay: true
+http.compression: false
+
